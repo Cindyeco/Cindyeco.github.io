@@ -4,7 +4,7 @@ collection: publications
 category: "working_papers"
 permalink: /publications/Trade Tensions and Sourcing Diversification
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2025
+date: 2025-10-27
 venue: 'Reject & Resubmit in Journal of International Business Studies (JIBS, UTD-ranked)'
 slidesurl: 'https://cindyeco.github.io/files/slideJIBS.pdf'
 paperurl: 'https://cindyeco.github.io/files/paperJIBS.pdf'
@@ -29,5 +29,6 @@ The stability and resilience of global supply chains have become critical issues
 3. 2025 International Conference on Empirical Economics (ICEE PSU Altoona).
 </p>
 </details>
+
 
 
