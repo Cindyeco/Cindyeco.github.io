@@ -1,14 +1,14 @@
 ---
 title: “Trade Tensions and Sourcing Diversification (joint with Wei Tian, Jimmy Xu and Miaojie Yu)” 
-collection: research
+collection: publications
 category: "working_papers"
-permalink: /research/Trade Tensions and Sourcing Diversification
+permalink: /publications/Trade Tensions and Sourcing Diversification
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2025
 venue: 'Reject & Resubmit in Journal of International Business Studies (JIBS, UTD-ranked)'
-slidesurl: 'http://cindyeco.github.io/files/slideJIBS.pdf'
-paperurl: 'http://cindyeco.github.io/files/paperJIBS.pdf'
-#bibtexurl: 'http://academicpages.github.io/files/bibtexJIBS.bib'
+slidesurl: 'https://cindyeco.github.io/files/slideJIBS.pdf'
+paperurl: 'https://cindyeco.github.io/files/paperJIBS.pdf'
+#bibtexurl: 'https://academicpages.github.io/files/bibtexJIBS.bib'
 #citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
 
@@ -29,4 +29,5 @@ The stability and resilience of global supply chains have become critical issues
 3. 2025 International Conference on Empirical Economics (ICEE PSU Altoona).
 </p>
 </details>
+
 
