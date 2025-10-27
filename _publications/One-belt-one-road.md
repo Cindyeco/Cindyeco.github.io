@@ -1,17 +1,18 @@
 ---
-title: “在成就与挑战中推进“一带一路”倡议 (Advancing One Belt One Road amid Achievements and Challenges, joint with Miaojie Yu)” 
+title: “在成就与挑战中推进“一带一路”倡议 (Advancing One Belt One Road amid Achievements and Challenges, joint with )” 
 collection: publications
 category: "publications"
 permalink: /publications/One-belt-one-road
-#excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'This paper is co-authored with Miaojie Yu, and summarizes the achievements and challenges of the Belt and Road Initiative (BRI).'
 date: 2022-11-01
 venue: 'published in 《辽宁大学学报（哲学社会科学版）》(Journal of Liaoning University(Philosophy and Social Sciences)), Vol 50, No. 6'
-#slidesurl: 'https://Zhuoyu-Cindy-Chen.github.io/files/slideJIBS.pdf'
-paperurl: 'https://cindyeco.github.io/files/Onebeltoneroad.pdf'
-#bibtexurl: 'https://academicpages.github.io/files/bibtexJIBS.bib'
+#slidesurl: '/files/slideJIBS.pdf'
+paperurl: '/files/Onebeltoneroad.pdf'
+#bibtexurl: '/files/bibtexJIBS.bib'
 #citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 
 ---
+
 
 
 
