@@ -4,7 +4,7 @@ collection: publications
 category: "publications"
 permalink: /publications/One-belt-one-road
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2022
+date: 2022-11-01
 venue: 'published in 《辽宁大学学报（哲学社会科学版）》(Journal of Liaoning University(Philosophy and Social Sciences)), Vol 50, No. 6'
 #slidesurl: 'https://Zhuoyu-Cindy-Chen.github.io/files/slideJIBS.pdf'
 paperurl: 'https://cindyeco.github.io/files/Onebeltoneroad.pdf'
@@ -12,5 +12,6 @@ paperurl: 'https://cindyeco.github.io/files/Onebeltoneroad.pdf'
 #citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 
 ---
+
 
 
