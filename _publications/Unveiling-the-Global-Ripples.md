@@ -4,7 +4,7 @@ collection: publications
 category: "working_papers"
 permalink: /publications/Unveiling-the-Global-Ripples
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2025
+date: 2025-10-27
 venue: 'working paper'
 slidesurl: 'http://cindyeco.github.io/files/slideEUETS.pdf'
 paperurl: 'http://cindyeco.github.io/files/paperEUETS.pdf'
@@ -25,6 +25,7 @@ This paper investigates the spillover effects of the European Union Emissions Tr
 Colloquium in International Trade and Spatial Economics (ITS), Fall 2025, Columbia University.
 </p>
 </details>
+
 
 
 
