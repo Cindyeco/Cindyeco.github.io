@@ -5,9 +5,9 @@ title                    : "Zhuoyu(Cindy) Chen"
 title_separator          : "-"
 name                     : &name "Zhuoyu(Cindy) Chen"
 description              : &description "I am a fifth year Ph.D. student in Peking University, National School of Development(CCER) and I am currently a visit scholar in Columbia Business School, Columbia University. Research on trade, supply chains, and financing behaviors. Expected to graduate in June 2026."   
-url                      : https://cindyeco.github.io
+url                      : https://zhuoyu-cindy-chen.github.io
 baseurl                  : "" 
-repository               : "https://github.com/Cindyeco/Cindyeco.github.io"
+repository               : "https://github.com/Cindyeco/zhuoyu-cindy-chen.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
