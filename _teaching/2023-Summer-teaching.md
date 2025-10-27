@@ -4,8 +4,9 @@ collection: teaching
 type: "Summer Scholl (in English)"
 permalink: /teaching/2023-Summer-teaching
 venue: "Peking University"
-date: "2023 Summer"
+date: "2023-07-03"
 location: "Beijing, China"
 ---
+
 
 
