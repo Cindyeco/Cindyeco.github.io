@@ -1,8 +1,8 @@
 ---
 title: "Unveiling the Global Ripples: How EU ETS Influences Chinese Exporters (joint with Hongyi Jiang and Yaqi Wang)"
-collection: research
+collection: publications
 category: "working_papers"
-permalink: /research/Unveiling the Global Ripples
+permalink: /publications/Unveiling-the-Global-Ripples
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2025
 venue: 'working paper'
@@ -25,5 +25,6 @@ This paper investigates the spillover effects of the European Union Emissions Tr
 Colloquium in International Trade and Spatial Economics (ITS), Fall 2025, Columbia University.
 </p>
 </details>
+
 
 
