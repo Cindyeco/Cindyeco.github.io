@@ -10,7 +10,8 @@ Welcome to my website!
 
 About Me 
 ======
-​My name is Cindy(Zhuoyu) Chen (Chinese as 陈卓宇), and you can call me Cindy. I am currently 5th year PhD candidate at Peking University, National School of Development (also called as CCER). During 2025.01-2025.12, I am visiting PhD in Columbia Business School, Columbia University and conduct researches with Professor Shang-jin Wei.
+​My name is Cindy(Zhuoyu) Chen (Chinese as 陈卓宇), and you can call me Cindy. I am currently 5th year PhD candidate at Peking University, National School of Development (also called as CCER). During 2025.01-2025.12, I am visiting PhD in Columbia Business School, Columbia University and conduct researches with Professor Shang-jin Wei. You can find my CV [here](/files/CV.pdf).
+
 
 Research Interests
 ======
@@ -40,4 +41,5 @@ Tel：(+1)9173328985 (U.S.)	(+86)18811120728 (Chinese)
 Email：zychen2021@nsd.pku.edu.cn	zc2843@columbia.edu
 
 LinkedIn: www.linkedin.com/in/cindychen99
+
 
