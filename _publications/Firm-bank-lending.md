@@ -1,9 +1,9 @@
 ---
-title: “Trade Shocks and Firm-bank Lending Relationship(With Dongchen Yang)” 
+title: "Trade Shocks and Firm-bank Lending Relationship"
 collection: publications
 category: "in_progress"
 permalink: /publications/Firm-bank-lending
-#excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'This paper is a joint work with Dongchen Yang.'
 date: 2025-10-27
 #venue: 
 #slidesurl: 'https://Zhuoyu-Cindy-Chen.github.io/files/slideJIBS.pdf'
@@ -12,5 +12,6 @@ date: 2025-10-27
 #citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 
 ---
+
 
 
