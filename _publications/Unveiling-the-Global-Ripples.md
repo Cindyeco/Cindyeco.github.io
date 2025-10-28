@@ -1,14 +1,14 @@
 ---
-title: "Unveiling the Global Ripples: How EU ETS Influences Chinese Exporters (joint with Hongyi Jiang and Yaqi Wang)"
+title: "Unveiling the Global Ripples: How EU ETS Influences Chinese Exporters"
 collection: publications
 category: "working_papers"
 permalink: /publications/Unveiling-the-Global-Ripples
-#excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'This paper is a joint work with Hongyi Jiang and Yaqi Wang'
 date: 2025-10-27
 venue: 'working paper'
-slidesurl: 'http://cindyeco.github.io/files/slideEUETS.pdf'
-paperurl: 'http://cindyeco.github.io/files/paperEUETS.pdf'
-#bibtexurl: 'http://academicpages.github.io/files/bibtexJIBS.bib'
+slidesurl: '/files/slideEUETS.pdf'
+paperurl: '/files/paperEUETS.pdf'
+#bibtexurl: '/files/bibtexJIBS.bib'
 #citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
 
@@ -25,6 +25,7 @@ This paper investigates the spillover effects of the European Union Emissions Tr
 Colloquium in International Trade and Spatial Economics (ITS), Fall 2025, Columbia University.
 </p>
 </details>
+
 
 
 
