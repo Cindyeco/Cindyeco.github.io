@@ -33,16 +33,6 @@
   </url>
 
   <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/sitemap/</loc>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/feed.xml</loc>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
     <loc>https://zhuoyu-cindy-chen.github.io/publications/Debt-financing</loc>
     <priority>1.00</priority>
   </url>
@@ -178,11 +168,6 @@
   </url>
 
   <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/cv-json/</loc>
-    <priority>0.55</priority>
-  </url>
-
-  <url>
     <loc>https://zhuoyu-cindy-chen.github.io/talks/2013-03-01-tutorial-1</loc>
     <priority>0.55</priority>
   </url>
@@ -238,11 +223,6 @@
   </url>
 
   <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/404.html</loc>
-    <priority>0.53</priority>
-  </url>
-
-  <url>
     <loc>https://zhuoyu-cindy-chen.github.io/categories/</loc>
     <priority>0.53</priority>
   </url>
@@ -278,11 +258,6 @@
   </url>
 
   <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/resume-json</loc>
-    <priority>0.52</priority>
-  </url>
-
-  <url>
     <loc>https://zhuoyu-cindy-chen.github.io/markdown.html</loc>
     <priority>0.52</priority>
   </url>
@@ -298,31 +273,6 @@
   </url>
 
   <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/sitemap.xml</loc>
-    <priority>0.52</priority>
-  </url>
-
-  <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/assets/css/main.css</loc>
-    <priority>0.51</priority>
-  </url>
-
-  <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/assets/css/style.css</loc>
-    <priority>0.51</priority>
-  </url>
-
-  <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/redirects.json</loc>
-    <priority>0.51</priority>
-  </url>
-
-  <url>
-    <loc>https://zhuoyu-cindy-chen.github.io/robots.txt</loc>
-    <priority>0.51</priority>
-  </url>
-
-  <url>
     <loc>https://zhuoyu-cindy-chen.github.io/files/Keynesian.pdf</loc>
     <priority>0.51</priority>
   </url>
@@ -333,3 +283,4 @@
   </url>
 
 </urlset>
+
