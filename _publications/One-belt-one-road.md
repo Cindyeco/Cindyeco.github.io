@@ -1,5 +1,5 @@
 ---
-title: “在成就与挑战中推进“一带一路”倡议 (Advancing One Belt One Road amid Achievements and Challenges, joint with )” 
+title: "在成就与挑战中推进“一带一路”倡议 (Advancing One Belt One Road amid Achievements and Challenges)" 
 collection: publications
 category: "publications"
 permalink: /publications/One-belt-one-road
@@ -12,6 +12,7 @@ paperurl: '/files/Onebeltoneroad.pdf'
 #citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 
 ---
+
 
 
 
