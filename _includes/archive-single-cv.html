@@ -14,29 +14,59 @@
 
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    <li>
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
-      </div>
-    {% endif %}
-    <h3 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    <li style="margin-bottom: 0.8rem;">
+      
+      {% if include.type == "grid" and teaser %}
+        <div class="archive__item-teaser">
+          <img src=
+            {% if teaser contains "://" %}
+              "{{ teaser }}"
+            {% else %}
+              "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+            {% endif %}
+            alt="">
+        </div>
       {% endif %}
-    </h3>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %}
+
+      <!-- 1. 标题：深蓝色，加粗 -->
+      <h3 class="archive__item-title" itemprop="headline" style="font-size: 1.1em; font-weight: 600; margin-bottom: 0.2em; margin-top: 0; display: inline;">
+        {% if post.link %}
+          <a href="{{ post.link }}" style="color: #2c3e50; text-decoration: none;">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink" style="color: #2c3e50; text-decoration: none;">{{ title }}</a>
+        {% endif %}
+      </h3>
+      
+      <!-- 2. 阅读时间 (如果有) -->
+      {% if post.read_time %}
+        <span class="page__meta" style="font-size: 0.8em; color: #666;"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>
+      {% endif %}
+
+      <!-- 3. 引用/期刊信息：灰色，斜体，紧跟标题 -->
+      {% if post.venue or post.citation %}
+        <div class="archive__item-excerpt" itemprop="description" style="font-size: 0.95em; color: #666; font-style: italic; margin-top: 4px; margin-bottom: 4px;">
+          <!-- 如果有 citation 显示 citation，否则显示 venue -->
+          {% if post.citation %}
+             {{ post.citation }}
+          {% elsif post.venue %}
+             {{ post.venue }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <!-- 4. 下载按钮 (可选，为了风格统一) -->
+      <!-- 只有当有下载链接时才显示这一行 -->
+      {% if post.paperurl or post.slidesurl %}
+        <div class="archive__item-links" style="margin-top: 2px;">
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" style="display: inline-block; padding: 2px 8px; font-size: 0.75em; color: #fff; background-color: #2980b9; border-radius: 4px; text-decoration: none; margin-right: 5px;">PDF</a>
+          {% endif %}
+          {% if post.slidesurl %}
+            <a href="{{ post.slidesurl }}" style="display: inline-block; padding: 2px 8px; font-size: 0.75em; color: #fff; background-color: #7f8c8d; border-radius: 4px; text-decoration: none; margin-right: 5px;">Slides</a>
+          {% endif %}
+        </div>
+      {% endif %}
+
     </li>
- </article>
+  </article>
 </div>
