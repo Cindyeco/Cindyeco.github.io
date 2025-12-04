@@ -12,8 +12,11 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
+<!-- 容器样式：下划线分隔，间距适中 -->
+<div class="{{ include.type | default: "list" }}__item" style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #f2f3f3;">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <!-- 图片 Teaser (如果有) -->
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src=
@@ -26,59 +29,64 @@
       </div>
     {% endif %}
 
-    <h2 class="archive__item-title" itemprop="headline">
+    <!-- 1. 标题：深蓝色，加粗 -->
+    <h2 class="archive__item-title" itemprop="headline" style="font-size: 1.2em; font-weight: 600; margin-bottom: 0.2em; line-height: 1.2; margin-top: 0;">
       {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="{{ post.link }}" style="color: #2c3e50; text-decoration: none;">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink" style="color: #2c3e50; text-decoration: none;">{{ title }}</a>
       {% endif %}
     </h2>
     
+    <!-- 阅读时间 (如果开启) -->
     {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+      <p class="page__meta" style="color: #666; font-size: 0.8em;"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
+    <!-- 2. 期刊/会议/时间信息：灰色，斜体 -->
+    <!-- 注意：此处去掉了 "Published in" 字样，保持和 Publications 页面一致 -->
+    <div class="archive__item-venue" style="color: #666; font-size: 0.9em; margin-bottom: 0.5em; font-style: italic;">
         {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+          {{ post.type }}, {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}
         {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+          {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}
         {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+         <span class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></span>
         {% endif %}
+    </div>
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+    <!-- 3. 摘要/Excerpt：深灰色，紧凑 -->
+    {% if post.excerpt %}
+    <div class="archive__item-excerpt" itemprop="description" style="font-size: 0.95em; color: #444; margin-bottom: 0.5em; line-height: 1.5;">
+      {% if site.read_more != 'enabled' %}
+        {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}
+      {% else %}
+        {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}
+        <strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong>
+      {% endif %}
+    </div>
     {% endif %}
     
-    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
-    {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% endif %}
+    <!-- 4. 下载按钮区域：蓝色按钮风格 -->
+    <div class="archive__item-links" style="margin-top: 5px;">
+      <!-- 如果有 Citation 文本 -->
+      {% if post.citation %}
+        <div style="font-size: 0.9em; color: #444; margin-bottom: 5px;">Recommended citation: {{ post.citation }}</div>
+      {% endif %}
+      
+      <!-- 按钮生成逻辑：只要有链接就显示按钮，无需手动判断组合 -->
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" style="display: inline-block; padding: 4px 10px; font-size: 0.8em; color: #fff; background-color: #2980b9; border-radius: 4px; text-decoration: none; margin-right: 8px;">Download Paper</a>
+      {% endif %}
+      
+      {% if post.slidesurl %}
+        <a href="{{ post.slidesurl }}" style="display: inline-block; padding: 4px 10px; font-size: 0.8em; color: #fff; background-color: #7f8c8d; border-radius: 4px; text-decoration: none; margin-right: 8px;">Download Slides</a>
+      {% endif %}
+      
+      {% if post.bibtexurl %}
+        <a href="{{ post.bibtexurl }}" style="display: inline-block; padding: 4px 10px; font-size: 0.8em; color: #fff; background-color: #2980b9; border-radius: 4px; text-decoration: none; margin-right: 8px;">Download Bibtex</a>
+      {% endif %}
+    </div>
 
   </article>
 </div>
