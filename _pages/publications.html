@@ -1,17 +1,127 @@
----
+
 layout: archive
 title: "Research"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<!-- 1. 自定义样式 -->
+<style>
+  /* 每一篇论文的容器 */
+  .publication-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f2f3f3;
+  }
+  
+  /* 标题 */
+  .publication-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 0.2em;
+    line-height: 1.2;
+  }
+  .publication-title a {
+    color: #2c3e50;
+    text-decoration: none;
+  }
+  .publication-title a:hover {
+    color: #496379;
+    text-decoration: underline;
+  }
+
+  /* 期刊信息 */
+  .publication-venue {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+  }
+
+  /* 折叠摘要样式 (New) */
+  details {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  summary {
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #555;
+    font-weight: 500;
+    list-style: none; /* 隐藏默认三角(部分浏览器) */
+    outline: none;
+  }
+  
+  /* 恢复并自定义箭头样式 */
+  summary::-webkit-details-marker {
+    display: inline-block; /* 简单的默认三角 */
+    color: #888;
+  }
+  /* 对于不支持 marker 的浏览器，可以手动加箭头，或者直接保留默认 */
+  summary:hover {
+    color: #2980b9;
+  }
+
+  /* 展开后的内容样式 */
+  .publication-content {
+    font-size: 0.95em;
+    color: #444;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #f9f9f9; /* 淡淡的灰色背景 */
+    border-radius: 4px;
+    line-height: 1.6;
+    border-left: 3px solid #2980b9; /* 左侧加个蓝条强调 */
+  }
+
+  /* 按钮容器 */
+  .publication-links {
+    margin-top: 8px;
+  }
+
+  /* 按钮通用样式 */
+  .publication-links a {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.8em;
+    color: #fff;
+    background-color: #2980b9;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    margin-right: 8px;
+  }
+  .publication-links a:hover {
+    background-color: #1c5980;
+  }
+
+  .publication-links a.slides-btn {
+    background-color: #7f8c8d; 
+  }
+  .publication-links a.slides-btn:hover {
+    background-color: #586667; 
+  }
+  
+  /* 分类标题 */
+  h2.category-title {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eaeaea;
+    color: #333;
+    font-size: 1.5em;
+  }
+</style>
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
+{% if site.author.googlescholar %}
+  <div class="wordwrap" style="margin-bottom: 1.5em;">
+    You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.
+  </div>
+{% endif %}
+
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
     {% assign title_shown = false %}
@@ -19,18 +129,83 @@ author_profile: true
       {% if post.category != category[0] %}
         {% continue %}
       {% endif %}
+      
       {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
+        <h2 class="category-title">{{ category[1].title }}</h2>
         {% assign title_shown = true %}
       {% endunless %}
-      {% include archive-single.html %}
+      
+      <div class="publication-item">
+        <div class="publication-title">
+          {% if post.link %}
+            <a href="{{ post.link }}">{{ post.title }}</a> 
+            <a href="{{ post.url | prepend: base_path }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+          {% else %}
+            <a href="{{ post.url | prepend: base_path }}" rel="permalink">{{ post.title }}</a>
+          {% endif %}
+        </div>
+
+        <div class="publication-venue">
+          {% if post.venue %}{{ post.venue }}{% endif %}
+          {% if post.date %}
+            {% if post.venue %}, {% endif %}
+            {{ post.date | date: "%Y" }}
+          {% endif %}
+        </div>
+
+        <!-- 修改部分：折叠显示的 Summary -->
+        {% if post.excerpt %}
+          <details>
+            <summary>Summary</summary>
+            <div class="publication-content">
+              <!-- 这里显示摘要内容 -->
+              {{ post.excerpt | markdownify }}
+            </div>
+          </details>
+        {% endif %}
+
+        <div class="publication-links">
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}">Download Paper</a>
+          {% endif %}
+          {% if post.slidesurl %}
+            <a href="{{ post.slidesurl }}" class="slides-btn">Download Slides</a>
+          {% endif %}
+        </div>
+      </div>
+
     {% endfor %}
   {% endfor %}
+
 {% else %}
   {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+    <div class="publication-item">
+      <div class="publication-title">
+        <a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a>
+      </div>
+      <div class="publication-venue">
+        {% if post.venue %}{{ post.venue }}{% endif %}
+        {% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}
+      </div>
+      
+      <!-- 修改部分：折叠显示的 Summary -->
+      {% if post.excerpt %}
+        <details>
+          <summary>Summary</summary>
+          <div class="publication-content">
+            {{ post.excerpt | markdownify }}
+          </div>
+        </details>
+      {% endif %}
+
+      <div class="publication-links">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}">Download Paper</a>
+        {% endif %}
+        {% if post.slidesurl %}
+          <a href="{{ post.slidesurl }}" class="slides-btn">Download Slides</a>
+        {% endif %}
+      </div>
+    </div>
   {% endfor %}
 {% endif %}
-
-
-
